@@ -199,6 +199,7 @@ lll: Reports long lines [fast: true]
 unparam: Reports unused function parameters [fast: false]
 nakedret: Finds naked returns in functions greater than a specified function length [fast: true]
 prealloc: Finds slice declarations that could potentially be preallocated [fast: true]
+gocritic: The most opinionated Go source code linter [fast: true]
 ```
 
 Pass `-E/--enable` to enable linter and `-D/--disable` to disable:
@@ -398,6 +399,7 @@ golangci-lint help linters
 - [unparam](https://github.com/mvdan/unparam) - Reports unused function parameters
 - [nakedret](https://github.com/alexkohler/nakedret) - Finds naked returns in functions greater than a specified function length
 - [prealloc](https://github.com/alexkohler/prealloc) - Finds slice declarations that could potentially be preallocated
+- [gocritic](https://github.com/go-critic/go-critic) - The most opinionated Go source code linter
 
 ## Configuration
 
@@ -637,7 +639,21 @@ linters-settings:
     simple: true
     range-loops: true # Report preallocation suggestions on range loops, true by default
     for-loops: false # Report preallocation suggestions on for loops, false by default
-
+  gocritic:
+    # which checks should be enabled; can't be combined with 'disabled-checks';
+    # default are: [appendAssign assignOp caseOrder dupArg dupBranchBody dupCase flagDeref
+    # ifElseChain regexpMust singleCaseSwitch sloppyLen switchTrue typeSwitchVar underef unlambda unslice rangeValCopy];
+    # all checks list: https://github.com/go-critic/checkers
+    enabled-checks:
+      - rangeValCopy
+    # which checks should be disabled; can't be combined with 'enabled-checks'; default is empty
+    disabled-checks:
+      - regexpMust
+    settings: # settings passed to gocritic
+      captLocal: # must be valid enabled check name
+        checkLocals: true
+      rangeValCopy:
+        sizeThreshold: 32
 
 linters:
   enable:
@@ -807,6 +823,7 @@ Thanks to developers and authors of used linters:
 - [client9](https://github.com/client9)
 - [walle](https://github.com/walle)
 - [alexkohler](https://github.com/alexkohler)
+- [go-critic](https://github.com/go-critic)
 
 ## Changelog
 

@@ -186,6 +186,11 @@ func (Manager) GetAllSupportedLinterConfigs() []linter.Config {
 			WithPresets(linter.PresetPerformance).
 			WithSpeed(8).
 			WithURL("https://github.com/alexkohler/prealloc"),
+		linter.NewConfig(golinters.Gocritic{}).
+			WithPresets(linter.PresetStyle).
+			WithSpeed(5).
+			WithTypeInfo().
+			WithURL("https://github.com/go-critic/go-critic"),
 	}
 
 	isLocalRun := os.Getenv("GOLANGCI_COM_RUN") == ""

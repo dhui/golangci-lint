@@ -42,6 +42,29 @@
   version = "v1.4.7"
 
 [[projects]]
+  branch = "master"
+  digest = "1:7e2e94e7633a12a0f963802db076251f6a6b30afc2cb1ac0b82c514d2414d6c8"
+  name = "github.com/go-critic/checkers"
+  packages = [
+    ".",
+    "internal/lintutil",
+  ]
+  pruneopts = "UT"
+  revision = "a14bc4b0b123d3fb9ea432c688fcf49da8a23b0f"
+
+[[projects]]
+  branch = "master"
+  digest = "1:252ec7c8aea19f061b2a103068d87fec25789d2d29736b92f9d86113cf8a4362"
+  name = "github.com/go-lintpack/lintpack"
+  packages = [
+    ".",
+    "astwalk",
+    "internal/lintutil",
+  ]
+  pruneopts = "UT"
+  revision = "7ff0297828fcd97b7ae460817c29173445705165"
+
+[[projects]]
   digest = "1:64a5a67c69b70c2420e607a8545d674a23778ed9c3e80607bfd17b77c6c87f6a"
   name = "github.com/go-ole/go-ole"
   packages = [
@@ -51,6 +74,54 @@
   pruneopts = "UT"
   revision = "a41e3c4b706f6ae8dfbff342b06e40fa4d2d0506"
   version = "v1.2.1"
+
+[[projects]]
+  branch = "master"
+  digest = "1:69730c6296dfd12387944afcba3eb3815ba6f984b68340c16577ce2900b4d5e6"
+  name = "github.com/go-toolsmith/astcast"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "b7a89ed70af1429e7518626ab0aee535a84a6b20"
+
+[[projects]]
+  digest = "1:71ce2e3f3b4acb600c5bbcffccd0d11534cec4e29a73f6de5781bae11ec528a3"
+  name = "github.com/go-toolsmith/astcopy"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "79b422d080c469383ec3cf020d124b70d073956b"
+  version = "0.9.0"
+
+[[projects]]
+  branch = "master"
+  digest = "1:db8123e0896cf805cb30c7bacad0b1a1d562edbbcd2a765ceda1af926c9a99a4"
+  name = "github.com/go-toolsmith/astequal"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "dcb477bfacd6e00a13c6d63bfc73db28dd343160"
+
+[[projects]]
+  branch = "master"
+  digest = "1:f4fcc4dafc60c8612e7b8855310f0f7f5b7b6947011e60f26fb9c10a690b0b6f"
+  name = "github.com/go-toolsmith/astfmt"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "8f8ee99c30864ae6d51ec6c8454d72a5072fe703"
+
+[[projects]]
+  branch = "master"
+  digest = "1:04989378ee2deb38e1f82fb5ec962a789f675e394c42c9df79fcc8f4e47d9005"
+  name = "github.com/go-toolsmith/astp"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "0af7e3c24f3087820a2e96679d064e6a56c624e2"
+
+[[projects]]
+  branch = "master"
+  digest = "1:b1f02c5bd489f87613dd60927e613d670b12b7d7c1a84def65c59ce0d83c38ee"
+  name = "github.com/go-toolsmith/typep"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "d63dc7650676b3b54b2e2f01057303e3bf9a09c5"
 
 [[projects]]
   digest = "1:9ae31ce33b4bab257668963e844d98765b44160be4ee98cafc44637a213e530d"
@@ -555,7 +626,7 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:aac721c5ec779073b35cf7a51b7764d13f6db2243d650965d2c71469e8994e5b"
+  digest = "1:c09b8b20f35b802fa418b0715e3147d6366b706c6003bbdef9df78272ffe80a5"
   name = "golang.org/x/tools"
   packages = [
     "go/ast/astutil",
@@ -604,6 +675,8 @@
   input-imports = [
     "github.com/OpenPeeDeeP/depguard",
     "github.com/fatih/color",
+    "github.com/go-critic/checkers",
+    "github.com/go-lintpack/lintpack",
     "github.com/golang/mock/gomock",
     "github.com/golangci/check/cmd/structcheck",
     "github.com/golangci/check/cmd/varcheck",
